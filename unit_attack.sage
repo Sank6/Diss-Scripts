@@ -2,7 +2,6 @@ K.<x> = CyclotomicField(16)
 G = K.galois_group()
 OK = K.ring_of_integers()
 
-t = vector([0, 0, 0, 0])
 
 def log_embedding(f):
     log_embeddings = [float(log(abs(f * conjugate(f))))]
@@ -19,6 +18,7 @@ def log_lattice(units):
     return matrix(log_lattice_out)
 
 def unit_attack(alpha, units):
+    t = vector([0, 0, 0, 0])
     condition = True
     iterations = 0
     while condition:
